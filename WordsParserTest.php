@@ -5,7 +5,7 @@ require 'WordsParser.php';
  
 class WordsParserTest extends TestCase
 {
-    public function testparseDate(): void
+    public function testparseWord(): void
     {   
         $test_words = [
             "documentarily" => true,
