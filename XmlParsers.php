@@ -2,7 +2,6 @@
 
 class XmlParsers {
 	private $file_path;
-	private $xml_file_contents = null;
 
 	public function setFilePath($file_path) {
 		$this->file_path = $file_path;
@@ -10,8 +9,7 @@ class XmlParsers {
 
 	public function getFileContents() {
 		if (file_exists($this->file_path)) {
-			var_dump(file_get_contents($this->file_path)); exit;
-		    $this->xml_file_contents = file_get_contents($this->file_path);
+		    return file_get_contents($this->file_path);
 		} else {
 		    return false;
 		}
@@ -33,6 +31,6 @@ class XmlParsers {
 
 	public function generateIds($filepath) {
 		$this->setFilePath($filepath);
-		$this->parseFile($this->getFileContents());
+		return $this->parseFile($this->getFileContents());
 	}
 }
